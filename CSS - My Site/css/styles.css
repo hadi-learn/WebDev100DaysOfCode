@@ -28,6 +28,7 @@ p {
     line-height: 2;
 }
 hr {
+    margin: 50px auto;
     border:#bae7e7 6px;
     border-style: dotted none none;
     width: 5%;
@@ -40,15 +41,36 @@ hr {
 .dev {
     text-decoration: underline;
 }
-.top-cloud {
-    position: absolute;
-    top: 15%;
-    left: 65%;
+.main-img {
+    width: 40%;
 }
-.bottom-cloud {
+.css {
     position: absolute;
-    top: 35%;
+    max-width: 5em;
+    max-height: 5em;
+    top: 30%;
     left: 25%;
+}
+.html {
+    position: absolute;
+    max-width: 5em;
+    max-height: 5em;
+    top: 10%;
+    left: 35%;
+}
+.js {
+    position: absolute;
+    max-width: 5em;
+    max-height: 5em;
+    top: 45%;
+    left: 70%;
+}
+.cameraman {
+    position: absolute;
+    max-width: 15em;
+    max-height: 15em;
+    top: 10%;
+    left: 63%;
 }
 .middle-container {
     padding-top: 50px;
