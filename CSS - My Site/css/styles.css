@@ -46,6 +46,9 @@ hr {
 }
 .css {
     position: absolute;
+    width: 5%;
+    min-width: 1em;
+    min-height: 1em;
     max-width: 5em;
     max-height: 5em;
     top: 30%;
@@ -53,6 +56,9 @@ hr {
 }
 .html {
     position: absolute;
+    width: 5%;
+    min-width: 1em;
+    min-height: 1em;
     max-width: 5em;
     max-height: 5em;
     top: 10%;
@@ -60,6 +66,9 @@ hr {
 }
 .js {
     position: absolute;
+    width: 5%;
+    min-width: 1em;
+    min-height: 1em;
     max-width: 5em;
     max-height: 5em;
     top: 45%;
@@ -67,6 +76,9 @@ hr {
 }
 .cameraman {
     position: absolute;
+    width: 13%;
+    min-width: 3em;
+    min-height: 3em;
     max-width: 15em;
     max-height: 15em;
     top: 10%;
