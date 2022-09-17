@@ -1,7 +1,3 @@
-/* #stack {
-    position: absolute;
-} */
-
 #title {
     background-color: #ff4c68;
     color: aliceblue;
@@ -142,6 +138,13 @@ h1 {
     text-align: center;
 }
 
+.pricing-title {
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
 .pricing-column {
     padding: 3% 2%;
 }
@@ -149,5 +152,38 @@ h1 {
 /* CALL TO ACTION SECTION */
 
 #cta {
+    background-color: #ff4c68;
+    padding: 6% 15% 5%;
+    text-align: center;
+    color: aliceblue;
 }
 
+.cta-text {
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* FOOTER SECTION */
+
+#footer {
+    background-color: white;
+    text-align: center;
+    padding: 5% 15% 3%;
+}
+
+.icon {
+    margin: 0 10px 10px;
+}
+
+/* MEDIA QUERY SECTION */
+
+@media (max-width: 990px) {
+    .img-phone {
+        position: static;
+        transform: rotate(0);
+    }
+    #title {
+        text-align: center;
+    }
+}
