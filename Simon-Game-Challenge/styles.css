@@ -1,0 +1,119 @@
+
+body {
+    background-color: rgb(30, 42, 53);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 100px;
+    font-family: 'VT323', monospace;
+    font-size: 5rem;
+    color: rgb(236, 243, 169);
+}
+
+button {
+    height: 150px;
+    width: 150px;
+    border: 5px solid;
+    border-radius: 15%;
+    border-color: rgb(0, 0, 0);
+    margin: 15px;
+    font-family: 'VT323', monospace;
+    font-size: 5rem;
+    color: rgb(59, 59, 55);
+}
+
+div.left-compartment {
+    text-align: right;
+}
+
+div.right-compartment {
+    text-align: left;
+}
+
+
+.current-level-info {
+    font-family: 'VT323', monospace;
+    font-size: 2rem;
+    color: rgb(236, 243, 169);
+}
+
+.user-sequence {
+    font-family: 'VT323', monospace;
+    font-size: 3rem;
+    color: rgb(248, 192, 70);
+}
+
+.game-sequence {
+    font-family: 'VT323', monospace;
+    font-size: 3rem;
+    color: rgb(185, 78, 6);
+}
+
+.select-box {
+    font-family: 'VT323', monospace;
+    font-size: 3rem;
+    color: rgb(236, 243, 169);
+}
+
+.success {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2rem;
+    color: rgb(10, 190, 181);
+}
+
+.wrong {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2rem;
+    color: rgb(0, 0, 0);
+}
+
+.highest-score {
+    font-family: 'VT323', monospace;
+    font-size: 3rem;
+    color: rgb(236, 243, 169);
+}
+
+.current-highest-score {
+    font-family: 'VT323', monospace;
+    font-size: 3rem;
+    color: rgb(185, 78, 6);
+}
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+    margin-right: 150px;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.pressed {
+    opacity: 0.5;
+    box-shadow: 0 3px 4px 0 rgb(173, 221, 240);
+}
+
+.random-pressed {
+    opacity: 0.5;
+    box-shadow: 0 3px 4px 0 rgb(212, 79, 86);
+}
+
+.game-over {
+    background-color: rgb(255, 0, 0);
+}
+
+.syukri {
+    margin-top: 100px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 2rem;
+    color: rgb(10, 190, 181);
+}
