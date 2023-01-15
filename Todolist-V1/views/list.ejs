@@ -1,35 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weekday</title>
-</head>
+<%- include('header') -%>
+
 <body>
-    <h1>It's <%= kindOfDay %>.</h1>
-    <hr>
-    <!-- Using switch method -->
+    <div class="box" id="heading">
+        <h1><%= listItem %></h1>
+    </div>
 
-    <!-- <% if (kindOfDay === 'Saturday' || kindOfDay === 'Sunday') { %>
-        <h1 style="color:darkgoldenrod"><%= kindOfDay %> ToDo List :</h1>
-    <% } else { %>
-        <h1 style="color:cyan"><%= kindOfDay %> ToDo List :</h1>
-    <% } %> -->
-
-    <!-- Using toLocaleDateString -->
-
-    <ul>
+    
+    <div class="box">
         <% for (let i=0; i < newListItems.length; i++) { %>
-            <li><%= newListItems[i] %></li>
+            <div class="item">
+                <input type="checkbox">
+                <p><%= newListItems[i] %></p>
+            </div>
         <% } %>
-        <!-- <li><%= newListItems %></li> -->
-    </ul>
-    <hr>
-    <form action="/" method="post">
-        <label for="nextItem">What to do next?: </label>
-        <input type="text" id="nextToDo" name="nextItem" placeholder="To Do" required><br><br>
-        <button type="submit">Add</button>
-    </form>
+
+        <form class="item" action="/" method="post">
+            <!-- <p><label for="nextItem">Next: </label></p> -->
+            <input type="text" id="nextToDo" name="nextItem" placeholder="New To Do" autocomplete="off" required>
+            <button type="submit" name="button" value="<%= listItem %>">+</button>
+        </form>
+    </div>
+
 </body>
-</html>
+<%- include('footer') -%>

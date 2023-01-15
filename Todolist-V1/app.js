@@ -1,70 +1,46 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const date = require(__dirname + '/date.js');
 
+const currentDate = date.getDate();
+const day = currentDate.day;
+const year = currentDate.year;
+const today = date.getDay();
 const app = express();
 const port = 3000;
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static('public'));
 
-var items = ['Buy food', 'Cook food', 'Eat food'];
+let pages = [day, 'Work List'];
+let items = ['Buy food', 'Cook food', 'Eat food'];
+let workItems = [];
 
-app.get('/', function(req, res) {
-    var today = new Date();
-    var currentDay = today.getDay();
-    // var currentDay = 7;
-
-    // using switch method then pass it to html page
-
-    // var day ='';
-
-    // switch (currentDay) {
-    //     case 0:
-    //       day = "Sunday";
-    //       break;
-    //     case 1:
-    //       day = "Monday";
-    //       break;
-    //     case 2:
-    //        day = "Tuesday";
-    //       break;
-    //     case 3:
-    //       day = "Wednesday";
-    //       break;
-    //     case 4:
-    //       day = "Thursday";
-    //       break;
-    //     case 5:
-    //       day = "Friday";
-    //       break;
-    //     case 6:
-    //       day = "Saturday";
-    //       break;
-    //     default:
-    //     console.log('Error: current day is equal to: ' + currentDay);
-    //   }
-
-    // Using javascript toLocaleDateString
-
-    var options = {
-      weekday: 'long',
-      day: 'numeric',
-      month: 'long',
-    };
-
-    var day = today.toLocaleDateString('en-US', options);
-    
-      res.render('list', {kindOfDay: day, newListItems: items});
+app.get('/', function(req, res) {    
+      res.render('list', {pages: pages, year: year, listItem: day, newListItems: items});
 })
 
 app.post('/', (req, res) => {
+    // console.log(req.body); 
     const nextItem = req.body.nextItem;
-    console.log(nextItem);
-    items.push(nextItem);
-    res.redirect('/');
+    // console.log(nextItem);
+    if (req.body.button === "Work List") {
+      workItems.push(nextItem);
+      res.redirect('/work')
+    } else {
+      items.push(nextItem);
+      res.redirect('/');
+    }    
 })
 
+app.get('/work', (req, res) => {
+  res.render('list', {pages: pages, year: year, listItem: "Work List", newListItems: workItems})
+})
 
+app.get('/about', (req, res) => {
+  res.render('about', {year: year})
+})
 
 app.listen(port, () => {
     console.log('Server started on port 3000');
