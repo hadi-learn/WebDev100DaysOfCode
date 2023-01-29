@@ -5,32 +5,48 @@ mongoose.set('strictQuery', false)
 mongoose.connect('mongodb://localhost:27017/fruitsDB')
 
 const fruitSchema = new mongoose.Schema ({
-    name: String,
-    rating: Number,
+    name: {
+        type: String,
+        required: [true, 'Please enter the name. No name specified.']
+    },
+    rating: {
+        type: Number,
+        min: 1,
+        max: 10
+    },
     review: String
 })
 
 const Fruit = mongoose.model('Fruit', fruitSchema)
 
-const fruit = new Fruit ({
-    name: 'Apple',
-    rating: 7,
-    review: 'Popular fruit'
+const pineapple = new Fruit ({
+    name: 'Pineapple',
+    rating: 9,
+    review: 'Great cheap fruit'
 })
 
-// fruit.save()
+// pineapple.save()
 
 
 const peopleSchema = new mongoose.Schema ({
-    name: String,
-    age: Number
+    name: {
+        type: String,
+        required: [true, 'Please enter the name, no name specified.']
+    },
+    age: {
+        type: Number
+    },
+    favouriteFruit: {
+        type: fruitSchema
+    }
 })
 
 const Person = mongoose.model('Person', peopleSchema)
 
 const person = new Person ({
-    name: 'Hadi',
-    age: 36
+    name: 'Kamil',
+    age: 36,
+    favouriteFruit: pineapple
 })
 
 // person.save()
@@ -61,6 +77,27 @@ const banana = new Fruit ({
 //     }
 // })
 
+let personUpdateByName = function(personName, fruitName) {
+    //find existing fruit that will be updated to the person
+    Fruit.findOne({name: fruitName}, (err, fruit) => {
+        if (err) {
+            console.log(err)
+        } else {
+            //update fruit to the person
+            Person.updateOne({name: personName}, {favouriteFruit: fruit}, (err, person) => {
+                if (err) {
+                    console.log(err)
+                } else {
+                    console.log(`Successfully updated ${fruit.name} to ${personName}`)
+                }
+            })
+        }
+    })
+}
+
+personUpdateByName('Hadi', 'Banana')
+
+
 Fruit.find(function(err, fruits) {
     if (err) {
         console.log(err)
@@ -74,7 +111,37 @@ Fruit.find(function(err, fruits) {
             console.log(fruits[i].name)
         }
     }
-    mongoose.connection.close()
+    // mongoose.connection.close()
 })
 
+Person.find(function(err, people) {
+    if (err) {
+        console.log(err)
+    } else {
+        // console.log(fruits)
+        people.forEach((item) => {
+            console.log(item.name)
+        })
+        
+        // for (i=0; i<people.length; i++) {
+        //     console.log(people[i].name)
+        // }
+    }
+    // mongoose.connection.close()
+})
 
+// Person.updateOne({name: 'Hadi'}, {favouriteFruit: banana}, (err) => {
+//     if (err) {
+//         console.log(err)
+//     } else {
+//         console.log('Successfully updated the document.')
+//     }
+// })
+
+// Fruit.deleteOne({_id:'63d3ac42d00b80d583b11bcc'}, (err) => {
+//     if (err) {
+//         console.log(err)
+//     } else {
+//         console.log('Successfully deleted a document.')
+//     }
+// })
