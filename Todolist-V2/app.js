@@ -147,7 +147,7 @@ app.post('/delete', (req, res) => {
         console.log(err)
       } else {
         let itemToDelete = foundItem.items.find( x => x.id === checkedItemId).name
-        console.log(foundItem)
+        // console.log(foundItem)
         console.log(`Successfully delete '${itemToDelete}' from '${_.capitalize(checkedItemList)}' Todolist.`)
         res.redirect(`/${checkedItemList}`)
       }
