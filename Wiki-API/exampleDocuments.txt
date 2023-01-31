@@ -1,0 +1,39 @@
+[
+    {
+        "_id": "63d8bf9f01c7212823276224",
+        "title": "REST",
+        "content": "REST is short for REpresentational State Transfer"
+    },
+    {
+        "_id": "63d8c61901c721282327622a",
+        "title": "API",
+        "content": "An API (Application Programming Interface) is a set of protocols, routines, and tools for building software and applications. It specifies how software components should interact and APIs allow for communication between different systems and enable access to a specific functionality or data from an external application."
+    },
+    {
+        "_id": "63d8c62401c721282327622b",
+        "title": "SOAP",
+        "content": "SOAP (Simple Object Access Protocol) is a messaging protocol specification for exchanging structured data in the implementation of web services. It uses XML as its message format and relies on other application layer protocols, like HTTP and SMTP, for message negotiation and transmission. SOAP is platform-independent and language-agnostic, making it a widely-used standard for implementing web services."
+    },
+    {
+        "_id": "63d8c66001c721282327622c",
+        "title": "SQL vs noSQL",
+        "content": "SQL (Structured Query Language) and NoSQL are two types of database management systems. SQL databases are structured, meaning they store data in a predefined way, using tables, columns, and rows. Examples of SQL databases include MySQL, Oracle, and Microsoft SQL Server. NoSQL databases are non-relational and allow for more flexible and dynamic data storage, using collections and documents instead of tables. Examples of NoSQL databases include MongoDB, Cassandra, and CouchDB. SQL databases are typically better suited for complex transactions and handling large amounts of structured data, while NoSQL databases are more suitable for handling large amounts of unstructured or semi-structured data and for use cases with horizontal scaling."
+    },
+    {
+        "_id": "63d8c66501c721282327622d",
+        "title": "DOM",
+        "content": "The DOM (Document Object Model) is a programming interface for HTML and XML documents. It represents the structure of a document as a tree-like hierarchy of nodes and allows for dynamic manipulation of the document's content and style. In the DOM, each element in an HTML or XML document is represented as a node in the tree, with properties and methods that can be accessed and manipulated using JavaScript or other programming languages. This enables dynamic updates to the document, without requiring a page refresh. The DOM provides a way for scripts to access and update the content and structure of a document, making it a fundamental technology for dynamic web development."
+    },
+    {
+        "_id": "63d900484c26509df9b03e74",
+        "title": "postmanTest",
+        "content": "Test post request from postman to check RESTful API",
+        "__v": 0
+    },
+    {
+        "_id": "63d900c04c26509df9b03e76",
+        "title": "postmanTest2",
+        "content": "Second test post request from postman to check RESTful API",
+        "__v": 0
+    }
+]
