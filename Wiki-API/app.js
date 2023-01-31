@@ -1,4 +1,5 @@
 
+require('dotenv').config()
 const express = require('express')
 const ejs = require('ejs')
 const bodyParser = require('body-parser')
@@ -30,6 +31,11 @@ const articleSchema = new mongoose.Schema ({
 })
 
 const Article = new mongoose.model('Article', articleSchema)
+
+app.route('/')
+.get((req, res) => {
+    res.send(`<h1>This is RESTful API by Syukri Hadi</h1><br><p>Go to '/articles' to see all the collections.</p><br><p>You can perform 'GET', 'POST', 'PUT', 'PATCH', and 'DELETE' to route '/articles'.</p><br><p>Use URLEncoded request. Document has two fields: 'title' and 'content'.</p>`)
+})
 
 /////////////////// REQUEST FOR ALL ARTICLES //////////////////
 
