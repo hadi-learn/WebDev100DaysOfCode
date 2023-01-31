@@ -15,8 +15,8 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static('public'))
 
 mongoose.set('strictQuery', false)
-mongoose.connect('mongodb://localhost:27017/wikiDB')
-// mongoose.connect(`mongodb+srv://${process.env.ATLAS_ID}:${process.env.ATLAS_PW}@cluster0.ouzmlbq.mongodb.net/wikiDB`)
+// mongoose.connect('mongodb://localhost:27017/wikiDB')
+mongoose.connect(`mongodb+srv://${process.env.ATLAS_ID}:${process.env.ATLAS_PW}@cluster0.ouzmlbq.mongodb.net/wikiDB`)
 
 const articleSchema = new mongoose.Schema ({
     title: {
@@ -133,7 +133,7 @@ app.route('/articles/:requestedArticle')
         //     content: req.body.content
         // },
 
-        /////// USING ALL BODY REQUEST //////
+        /////// USING ALL BODY REQUEST WITH ATOMIC OPERATOR //////
         {$set: req.body},
         (err, respond) => {
             if (err) {
