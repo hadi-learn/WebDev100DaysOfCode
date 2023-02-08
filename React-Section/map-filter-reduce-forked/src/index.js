@@ -54,7 +54,5 @@ console.log(numbers.findIndex( num => num > 10))
 //////////////////////////////////////////////////////////////
 
 console.log(
-  emojipedia.map((emojiEntry) => {
-    return emojiEntry.meaning.substring(0, 100)
-  })
+  emojipedia.map( emojiEntry => emojiEntry.meaning.substring(0, 100))
 )
