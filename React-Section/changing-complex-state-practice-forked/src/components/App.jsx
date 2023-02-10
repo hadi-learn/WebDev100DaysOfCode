@@ -64,16 +64,19 @@ function App() {
           name="fName" 
           placeholder="First Name" 
           onChange={formHandler}
+          value={contact.fName}
         />
         <input 
           name="lName" 
           placeholder="Last Name" 
           onChange={formHandler}
+          value={contact.lName}
         />
         <input 
           name="email" 
           placeholder="Email" 
           onChange={formHandler}
+          value={contact.email}
         />
         <button onClick={btnClicked}>Submit</button>
       </form>
