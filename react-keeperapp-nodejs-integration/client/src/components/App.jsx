@@ -6,14 +6,14 @@ import CreateArea from "./CreateArea";
 import axios from "axios"
 
 const client = axios.create({
-  baseURL: "http://localhost:8000/notes"
+  baseURL: "https://note-keeper-api.syukri-hadi.com/notes"
 })
 
 function App() {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8000/notes`)
+    fetch(`https://note-keeper-api.syukri-hadi.com/notes`)
     .then((res) => res.json())
     .then((data) => setNotes(data))
   })
@@ -32,7 +32,7 @@ function App() {
 
   ///////////  ADD USING FETCH //////////////
   // function addNote(newNote) {
-  //   fetch('http://localhost:8000/notes', {
+  //   fetch('https://note-keeper-api.syukri-hadi.com/notes', {
   //     method: 'POST',
   //     headers: {
   //       'Content-Type': 'application/json',
